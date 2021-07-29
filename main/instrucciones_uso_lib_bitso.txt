@@ -1,0 +1,16 @@
+Instrucciones para poder usar la libreria de bitso 
+    -Descargar el codigo del git oficial:
+        https://github.com/bitsoex/bitso-py
+    -Crear un nuevo branch interno para hacer modificaciones al archivo setup.py
+        git switch -c b
+    -Una vez creado el branch "b" modificar el archivo setup.py quitando las lineas 4, 5 y 6, despues identar correctamente la linea:
+        long_description = 'A python wrapper for the Bitso API.'
+    -Despues hacer la instalacion de la libreria de bitso, abriendo la terminal en la carpeta del proyecto a agregar
+    -Crear un ambiente (env) y despues ejecutar la siguiente linea:
+        pip3 install -e git+file:///C:/yourRute/gitHubProjects/bitsoRepo@b#egg=bitso-py 
+        Nota: cambiar la ruta por donde se haya clonado el repo de bitso-py, y cambiar el nombre de la rama (branch) creado anteriormente "b"
+    -Ya instalado se puede usar en el proyecto, pero hay que modificar el tiempo de respuesta que se encuentra en:
+        /src/bitso-py/bitso/api.py
+    -Editar la linea 80 cambiando la funcion __init__el parametro timeout para que sea 6000 minimo
+
+    y listo asi es como pude usar la libreria
